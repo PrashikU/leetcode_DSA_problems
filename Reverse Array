@@ -1,0 +1,38 @@
+// This class defines a Java program to reverse an array of integers.
+
+public class Reverse {
+    
+    // This method reverses the given array of integers in-place.
+    public static void rvc(int nums[]) {
+        // Initialize two pointers: firstIndex points to the start of the array, lastIndex points to the end.
+        int firstIndex = 0;
+        int lastIndex = nums.length - 1;
+        
+        // Continue swapping elements until the first index surpasses the last index.
+        while (firstIndex < lastIndex) {
+            // Swap the elements at the first and last indices.
+            int temp = nums[lastIndex];
+            nums[lastIndex] = nums[firstIndex];
+            nums[firstIndex] = temp;
+            
+            // Move the pointers towards each other.
+            firstIndex++;
+            lastIndex--;
+        }
+    }
+
+    // The main method where the program execution begins.
+    public static void main(String[] args) {
+        // Initialize an array of integers.
+        int[] nums = {10, 20, 30, 40, 50};
+        
+        // Call the reverse method to reverse the array.
+        rvc(nums);
+        
+        // Print the reversed array.
+        System.out.print("Reversed Array: ");
+        for (int i = 0; i < nums.length; i++) {
+            System.out.print(nums[i] + " ");
+        }
+    }
+}
