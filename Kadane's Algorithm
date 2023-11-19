@@ -1,0 +1,35 @@
+//Maximum-Subarray -> Kadane's Algorithm
+public class test {
+    // Method to find the maximum subarray sum
+    public static void kd(int nums[]) {
+        // Initialize variables to keep track of maximum subarray sum (ms) and current subarray sum (cs)
+        int ms = Integer.MIN_VALUE; // Initialize ms to the smallest possible integer value
+        int cs = 0; // Initialize cs to 0
+
+        // Loop through each element in the array
+        for (int i = 0; i < nums.length; i++) {
+            // Update current subarray sum by adding the current element
+            cs = cs + nums[i];
+
+            // If the current subarray sum becomes negative, reset it to 0
+            if (cs < 0) {
+                cs = 0;
+            }
+
+            // Update the maximum subarray sum by taking the maximum of current subarray sum and the previous maximum
+            ms = Math.max(cs, ms);
+        }
+
+        // Print the maximum subarray sum after the loop completes
+        System.out.println(ms);
+    }
+
+    // Main method to test the kd() function
+    public static void main(String[] args) {
+        // Test array
+        int nums[] = {-2, -3, 4, -1, -2, 1, 5, -3};
+
+        // Call the kd() method with the test array
+        kd(nums);
+    }
+}
