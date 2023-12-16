@@ -1,1 +1,14 @@
-4. Print numbers in increasing order
+//Print numbers in increasing order
+public class Test{
+    public static void Inc(int n){
+        if(n==10){
+            System.out.println(n);
+            return;
+        }
+        System.out.println(n+" ");
+        Inc(n+1);
+    }
+  public static void main(String[] args) {
+    int n = 1;
+    Inc(n);
+  }
